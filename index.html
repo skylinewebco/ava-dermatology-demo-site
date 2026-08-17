@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" data-theme-init>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f7fb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0e14" media="(prefers-color-scheme: dark)" />
+
+  <title>Ava Dermatology — Healthy Skin. Confident You.</title>
+  <meta name="description" content="Ava Dermatology offers personalized, modern dermatological care in a calm, comfortable setting. Book a consultation for acne, pigmentation, anti-aging, laser treatments and more." />
+  <meta name="keywords" content="dermatology, skin care, dermatologist, acne treatment, pigmentation, melasma, anti-aging, laser skin treatment, skin rejuvenation" />
+  <meta name="author" content="Ava Dermatology" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ava Dermatology — Healthy Skin. Confident You." />
+  <meta property="og:description" content="Personalized, modern dermatological care in a calm, comfortable setting." />
+  <meta property="og:site_name" content="Ava Dermatology" />
+  <meta property="og:image" content="assets/og-image.svg" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ava Dermatology — Healthy Skin. Confident You." />
+  <meta name="twitter:description" content="Personalized, modern dermatological care in a calm, comfortable setting." />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Fonts: loaded with graceful fallback to system fonts if offline -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;450;500;600&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Ava Dermatology",
+    "description": "Personalized, modern dermatological care.",
+    "medicalSpecialty": "Dermatology",
+    "url": "https://example.com/",
+    "telephone": "[CLINIC PHONE]",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[STREET ADDRESS]",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
+      "postalCode": "77001",
+      "addressCountry": "US"
+    },
+    "areaServed": "Houston, TX",
+    "openingHours": "Mo-Fr 09:00-18:00"
+  }
+  </script>
+
+  <!-- Prevent theme flash: set theme before paint -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('ava-theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+      document.documentElement.removeAttribute('data-theme-init');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Ambient background layers -->
+  <div class="bg-atmosphere" aria-hidden="true">
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#home" class="brand" aria-label="Ava Dermatology home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="url(#bg1)" stroke-width="1.4"/>
+            <path d="M16 6c5 4 5 16 0 20-5-4-5-16 0-20Z" fill="url(#bg2)" opacity="0.85"/>
+            <defs>
+              <linearGradient id="bg1" x1="2" y1="2" x2="30" y2="30">
+                <stop stop-color="#7cb2e8"/><stop offset="1" stop-color="#b9d4f0"/>
+              </linearGradient>
+              <linearGradient id="bg2" x1="16" y1="6" x2="16" y2="26">
+                <stop stop-color="#9cc4ee"/><stop offset="1" stop-color="#dfeaf7"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand__text">Ava<span class="brand__accent">Dermatology</span></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#treatments">Treatments</a>
+        <a href="#results">Results</a>
+        <a href="#doctor">Doctor</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+          <span class="theme-toggle__track">
+            <span class="theme-toggle__thumb">
+              <svg class="icon-sun" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5 5l1.8 1.8M17.2 17.2 19 19M19 5l-1.8 1.8M6.8 17.2 5 19"/></g></svg>
+              <svg class="icon-moon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="currentColor"/></svg>
+            </span>
+          </span>
+        </button>
+        <a href="#booking" class="btn btn--primary btn--sm nav__cta">Book Appointment</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <nav class="mobile-menu__links" aria-label="Mobile">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#treatments">Treatments</a>
+        <a href="#results">Results</a>
+        <a href="#doctor">Doctor</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="#booking" class="btn btn--primary mobile-menu__cta">Book Appointment</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow reveal">Ava Dermatology</p>
+          <h1 class="hero__title reveal" data-reveal-delay="1">Healthy Skin.<br /><span class="grad-text">Confident You.</span></h1>
+          <p class="hero__lead reveal" data-reveal-delay="2">
+            Personalized, modern dermatological care — thoughtfully delivered in a calm,
+            comfortable setting. We combine evidence-informed treatments with an attentive,
+            individual approach to help your skin feel its healthiest.
+          </p>
+          <div class="hero__actions reveal" data-reveal-delay="3">
+            <a href="#booking" class="btn btn--primary btn--lg magnetic">Book Appointment</a>
+            <a href="#treatments" class="btn btn--ghost btn--lg magnetic">Explore Treatments</a>
+          </div>
+          <div class="hero__meta reveal" data-reveal-delay="4">
+            <div class="hero__meta-item"><span class="dot"></span>Personalized consultations</div>
+            <div class="hero__meta-item"><span class="dot"></span>Modern technology</div>
+            <div class="hero__meta-item"><span class="dot"></span>Comfort-first care</div>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__ring"></div>
+          <div class="hero__ring hero__ring--2"></div>
+          <div class="hero__chip hero__chip--serum glass" data-parallax="1.1">
+            <img src="https://images.unsplash.com/photo-1576426863848-c21f53c60b19?auto=format&fit=crop&w=500&q=80" width="400" height="500" alt="" loading="lazy" decoding="async" />
+          </div>
+          <div class="hero__chip hero__chip--texture glass" data-parallax="0.8">
+            <img src="https://images.unsplash.com/photo-1710580889701-9fa8f2cd5927?auto=format&fit=crop&w=500&q=80" width="400" height="400" alt="" loading="lazy" decoding="async" />
+          </div>
+          <div class="hero__card glass hero__card--top" data-parallax="0.6">
+            <span class="hero__card-label">Skin Analysis</span>
+            <span class="hero__card-value">Personalized</span>
+          </div>
+          <div class="hero__card glass hero__card--bottom" data-parallax="0.9">
+            <span class="hero__card-label">Approach</span>
+            <span class="hero__card-value">Evidence-informed</span>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="hero__scroll" aria-label="Scroll to about">
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <div class="about__visual reveal">
+          <div class="about__visual-inner glass" data-tilt>
+            <div class="about__blob"></div>
+            <img class="about__img" src="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=900&q=80" width="800" height="900"
+                 alt="A patient receiving a personalized professional skincare treatment" loading="lazy" decoding="async" />
+          </div>
+          <div class="about__float glass" data-scroll-parallax="0.5">
+            <span class="about__float-dot"></span>
+            <div><strong>Skin-first</strong><span>care philosophy</span></div>
+          </div>
+        </div>
+        <div class="about__content">
+          <p class="eyebrow reveal">About Ava Dermatology</p>
+          <h2 class="section-title reveal" data-reveal-delay="1">Modern dermatology,<br />centered around you.</h2>
+          <p class="section-lead reveal" data-reveal-delay="2">
+            At Ava Dermatology, we believe great skin care starts with listening. Every visit
+            begins with understanding your concerns, your goals, and your daily life — so your
+            care plan fits you, not a template.
+          </p>
+          <div class="about__pillars">
+            <div class="about__pillar reveal" data-reveal-delay="2">
+              <div class="about__pillar-icon">✦</div>
+              <h3>Personalized care</h3>
+              <p>Individual assessment and tailored plans for your unique skin.</p>
+            </div>
+            <div class="about__pillar reveal" data-reveal-delay="3">
+              <div class="about__pillar-icon">◈</div>
+              <h3>Evidence-informed</h3>
+              <p>Thoughtful, modern approaches grounded in current dermatology.</p>
+            </div>
+            <div class="about__pillar reveal" data-reveal-delay="3">
+              <div class="about__pillar-icon">❖</div>
+              <h3>Patient comfort</h3>
+              <p>A calm, welcoming environment designed to put you at ease.</p>
+            </div>
+            <div class="about__pillar reveal" data-reveal-delay="4">
+              <div class="about__pillar-icon">✧</div>
+              <h3>Skin confidence</h3>
+              <p>Helping you feel healthy and confident in your own skin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TREATMENTS ============ -->
+    <section class="section treatments" id="treatments">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Treatments &amp; Services</p>
+          <h2 class="section-title">Comprehensive dermatology care</h2>
+          <p class="section-lead center">A full range of medical and cosmetic dermatology services, each tailored to your individual needs. Select a treatment to learn more.</p>
+        </div>
+        <div class="treatments__grid" id="treatmentsGrid"><!-- injected by JS --></div>
+      </div>
+    </section>
+
+    <!-- ============ SKIN CONCERNS ============ -->
+    <section class="section concerns" id="concerns">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Skin Concerns</p>
+          <h2 class="section-title">Concerns we commonly help with</h2>
+          <p class="section-lead center">If any of these sound familiar, a consultation can help clarify the right path for your skin.</p>
+        </div>
+        <div class="concerns__cloud" id="concernsCloud"><!-- injected by JS --></div>
+      </div>
+    </section>
+
+    <!-- ============ RESULTS ============ -->
+    <section class="section results" id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Results</p>
+          <h2 class="section-title">Before &amp; after</h2>
+          <p class="section-lead center">The images below are clearly marked placeholders. Replace them with your own consented clinic photography. Individual results vary from person to person.</p>
+        </div>
+        <div class="results__grid" id="resultsGrid"><!-- injected by JS --></div>
+        <p class="results__disclaimer reveal">Results vary by individual. Images are illustrative placeholders and do not represent guaranteed outcomes.</p>
+      </div>
+    </section>
+
+    <!-- ============ DOCTOR ============ -->
+    <section class="section doctor" id="doctor">
+      <div class="container doctor__grid">
+        <div class="doctor__portrait reveal">
+          <div class="doctor__portrait-frame glass" data-tilt>
+            <img class="doctor__img" src="https://images.unsplash.com/photo-1659353888906-adb3e0041693?auto=format&fit=crop&w=900&q=80" width="800" height="1000"
+                 alt="A dermatologist in a white coat" loading="lazy" decoding="async" />
+            <span class="doctor__portrait-tag">Portrait placeholder</span>
+          </div>
+        </div>
+        <div class="doctor__content">
+          <p class="eyebrow reveal">The Doctor</p>
+          <h2 class="section-title reveal" data-reveal-delay="1">[ Dr. Full Name ]</h2>
+          <p class="doctor__title reveal" data-reveal-delay="1">[ Qualifications / Title placeholder ]</p>
+          <p class="section-lead reveal" data-reveal-delay="2">
+            [ Short biography placeholder — replace with the doctor's background, philosophy of
+            care, and approach to dermatology. Keep it warm, professional, and factual. Do not
+            add credentials that have not been verified. ]
+          </p>
+          <ul class="doctor__specialties reveal" data-reveal-delay="3">
+            <li>Medical dermatology</li>
+            <li>Cosmetic dermatology</li>
+            <li>Laser &amp; skin rejuvenation</li>
+            <li>Personalized skincare</li>
+          </ul>
+          <a href="#booking" class="btn btn--primary magnetic reveal" data-reveal-delay="3">Book Appointment</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST / EXPERIENCE ============ -->
+    <section class="section trust" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">The Ava Experience</p>
+          <h2 class="section-title">What sets our care apart</h2>
+        </div>
+        <div class="trust__grid" id="trustGrid"><!-- injected by JS --></div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Patient Testimonials</p>
+          <h2 class="section-title">In our patients' words</h2>
+          <p class="section-lead center">Sample placeholder testimonials — replace with real, consented patient feedback before publishing.</p>
+        </div>
+        <div class="reviews__carousel reveal">
+          <button class="reviews__nav reviews__nav--prev" id="reviewPrev" type="button" aria-label="Previous testimonial">‹</button>
+          <div class="reviews__viewport">
+            <div class="reviews__track" id="reviewsTrack"><!-- injected by JS --></div>
+          </div>
+          <button class="reviews__nav reviews__nav--next" id="reviewNext" type="button" aria-label="Next testimonial">›</button>
+        </div>
+        <div class="reviews__dots" id="reviewsDots" role="tablist" aria-label="Testimonial navigation"></div>
+      </div>
+    </section>
+
+    <!-- ============ BOOKING ============ -->
+    <section class="section booking" id="booking">
+      <div class="container booking__grid">
+        <div class="booking__intro reveal">
+          <p class="eyebrow">Book Appointment</p>
+          <h2 class="section-title">Request your consultation</h2>
+          <p class="section-lead">Share a few details and we'll be in touch to confirm your appointment. Prefer to chat? Book instantly via WhatsApp.</p>
+          <a href="#" class="btn btn--whatsapp btn--lg magnetic" id="whatsappBtn" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.03c-.24.68-1.42 1.32-1.95 1.36-.5.05-1.13.24-3.68-.77-3.1-1.22-5.07-4.4-5.22-4.6-.15-.2-1.24-1.65-1.24-3.15 0-1.5.79-2.24 1.07-2.54.28-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.68.52.24.6.83 2.06.9 2.2.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.36 1.45.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.4-.24.67-.15.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.12.07.72-.17 1.4Z"/></svg>
+            Book via WhatsApp
+          </a>
+        </div>
+
+        <form class="booking__form glass reveal" id="bookingForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-name">Full name <span class="req">*</span></label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required aria-required="true" />
+              <span class="field__error" data-error-for="name"></span>
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone number <span class="req">*</span></label>
+              <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" required aria-required="true" />
+              <span class="field__error" data-error-for="phone"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="f-email">Email <span class="req">*</span></label>
+              <input type="email" id="f-email" name="email" autocomplete="email" inputmode="email" required aria-required="true" />
+              <span class="field__error" data-error-for="email"></span>
+            </div>
+            <div class="field">
+              <label for="f-service">Treatment / service</label>
+              <select id="f-service" name="service">
+                <option value="">Select a service</option>
+                <option>Acne &amp; Acne Scars</option>
+                <option>Pigmentation &amp; Melasma</option>
+                <option>Anti-Aging &amp; Wrinkle Treatments</option>
+                <option>Laser Skin Treatments</option>
+                <option>Skin Rejuvenation</option>
+                <option>Hair Loss &amp; Hair Restoration</option>
+                <option>Mole &amp; Skin Lesion Treatments</option>
+                <option>Cosmetic Injectables</option>
+                <option>General Dermatology</option>
+                <option>Personalized Skincare</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="f-doctor">Preferred doctor</label>
+              <select id="f-doctor" name="doctor">
+                <option value="">No preference</option>
+                <option>[ Dr. Full Name ]</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-date">Preferred date</label>
+              <input type="date" id="f-date" name="date" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="f-time">Preferred time</label>
+              <select id="f-time" name="time">
+                <option value="">Select a time</option>
+                <option>Morning (09:00–12:00)</option>
+                <option>Afternoon (12:00–15:00)</option>
+                <option>Late afternoon (15:00–18:00)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-message">Additional message</label>
+              <input type="text" id="f-message" name="message" placeholder="Anything you'd like us to know" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--block magnetic">Request Appointment</button>
+          <p class="booking__note">By submitting, you agree to be contacted about your request. This form is a configurable placeholder — connect it to your booking system or email service.</p>
+
+          <div class="booking__success" id="bookingSuccess" role="status" aria-live="polite" hidden>
+            <div class="booking__success-icon">✓</div>
+            <h3>Request received</h3>
+            <p>Thank you, <span id="successName">there</span>. Your appointment request has been noted. Our team will reach out to confirm the details.</p>
+            <button type="button" class="btn btn--ghost btn--sm" id="bookingReset">Submit another request</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__info reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section-title">Visit Ava Dermatology</h2>
+          <ul class="contact__list">
+            <li>
+              <span class="contact__ico">📍</span>
+              <div><strong>Address</strong><br />[ Clinic street address ]<br />Houston, TX 77001</div>
+            </li>
+            <li>
+              <span class="contact__ico">📞</span>
+              <div><strong>Phone</strong><br /><a href="tel:[CLINIC-PHONE]">[ Clinic phone number ]</a></div>
+            </li>
+            <li>
+              <span class="contact__ico">✉️</span>
+              <div><strong>Email</strong><br /><a href="mailto:[clinic@email]">[ clinic@email ]</a></div>
+            </li>
+            <li>
+              <span class="contact__ico">🕑</span>
+              <div><strong>Opening hours</strong><br />Mon–Fri: 09:00–18:00<br />Sat: [ hours ] · Sun: Closed</div>
+            </li>
+          </ul>
+          <div class="contact__ctas">
+            <a href="#booking" class="btn btn--primary magnetic">Book Appointment</a>
+            <a href="#" class="btn btn--whatsapp" id="whatsappBtn2" rel="noopener">WhatsApp us</a>
+          </div>
+        </div>
+        <div class="contact__map reveal">
+          <div class="contact__map-ph glass">
+            <svg viewBox="0 0 300 200" aria-hidden="true" class="contact__map-svg">
+              <rect width="300" height="200" fill="var(--surface-2)"/>
+              <path d="M0 120 Q80 90 150 120 T300 110" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.5"/>
+              <path d="M40 0 L60 200" stroke="var(--line)" stroke-width="2" opacity="0.6"/>
+              <path d="M200 0 L230 200" stroke="var(--line)" stroke-width="2" opacity="0.6"/>
+              <circle cx="150" cy="100" r="10" fill="var(--accent)"/>
+              <circle cx="150" cy="100" r="20" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/>
+            </svg>
+            <div class="contact__map-label">📍 Houston, TX 77001 — Google Maps embed placeholder</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section faq" id="faq">
+      <div class="container faq__wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title">Frequently asked questions</h2>
+        </div>
+        <div class="faq__list" id="faqList"><!-- injected by JS --></div>
+        <p class="faq__note reveal">General information only — not a substitute for personalized medical advice. Please consult during your appointment for guidance specific to you.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#home" class="brand brand--footer">
+          <span class="brand__text">Ava<span class="brand__accent">Dermatology</span></span>
+        </a>
+        <p>Personalized, modern dermatological care in a calm, comfortable setting. Healthy skin, confident you.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram (placeholder)" class="footer__social-link">IG</a>
+          <a href="#" aria-label="Facebook (placeholder)" class="footer__social-link">FB</a>
+          <a href="#" aria-label="TikTok (placeholder)" class="footer__social-link">TT</a>
+          <a href="#" aria-label="LinkedIn (placeholder)" class="footer__social-link">IN</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Explore</h4>
+        <a href="#about">About</a>
+        <a href="#doctor">Doctor</a>
+        <a href="#results">Results</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <h4>Treatments</h4>
+        <a href="#treatments">Acne &amp; Scars</a>
+        <a href="#treatments">Pigmentation</a>
+        <a href="#treatments">Anti-Aging</a>
+        <a href="#treatments">Laser</a>
+        <a href="#treatments">Injectables</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="#contact">Houston, TX 77001</a>
+        <a href="tel:[CLINIC-PHONE]">[ Clinic phone ]</a>
+        <a href="mailto:[clinic@email]">[ clinic@email ]</a>
+        <a href="#booking">Book appointment</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Ava Dermatology. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="#" aria-label="Privacy Policy (placeholder)">Privacy Policy</a>
+        <a href="#" aria-label="Terms (placeholder)">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Treatment modal -->
+  <div class="modal" id="treatmentModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel glass" role="document">
+      <button class="modal__close" type="button" aria-label="Close" data-close-modal>×</button>
+      <div class="modal__icon" id="modalIcon" aria-hidden="true"></div>
+      <h3 class="modal__title" id="modalTitle"></h3>
+      <p class="modal__desc" id="modalDesc"></p>
+      <ul class="modal__points" id="modalPoints"></ul>
+      <div class="modal__actions">
+        <a href="#booking" class="btn btn--primary" data-close-modal>Book this treatment</a>
+        <button class="btn btn--ghost" type="button" data-close-modal>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/hero3d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
