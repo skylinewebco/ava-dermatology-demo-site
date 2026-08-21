@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Elegant studio portrait placeholder of a dermatologist">
+  <defs>
+    <radialGradient id="dr-bg" cx="50%" cy="30%" r="90%">
+      <stop offset="0%" stop-color="#eaf2fb"/>
+      <stop offset="55%" stop-color="#d6e4f4"/>
+      <stop offset="100%" stop-color="#b9d1ea"/>
+    </radialGradient>
+    <linearGradient id="dr-fig" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2f6fb"/>
+      <stop offset="60%" stop-color="#d3e2f2"/>
+      <stop offset="100%" stop-color="#a9c6e6"/>
+    </linearGradient>
+    <linearGradient id="dr-coat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e6eef8"/>
+    </linearGradient>
+    <radialGradient id="dr-glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="dr-grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+    <filter id="dr-soft"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+  <rect width="800" height="1000" fill="url(#dr-bg)"/>
+  <ellipse cx="400" cy="360" rx="320" ry="360" fill="url(#dr-glow)" filter="url(#dr-soft)"/>
+  <!-- shoulders / coat -->
+  <path d="M150 1000 C 170 760 250 690 400 690 C 550 690 630 760 650 1000 Z" fill="url(#dr-coat)"/>
+  <path d="M400 690 L360 1000 L440 1000 Z" fill="#dbe7f5" opacity="0.8"/>
+  <!-- neck -->
+  <path d="M360 620 h80 v90 c0 30 -80 30 -80 0 Z" fill="url(#dr-fig)"/>
+  <!-- head -->
+  <ellipse cx="400" cy="470" rx="132" ry="152" fill="url(#dr-fig)"/>
+  <!-- hair suggestion -->
+  <path d="M268 452 C 276 330 330 300 400 300 C 470 300 524 330 532 452 C 520 372 468 344 400 344 C 332 344 280 372 268 452 Z" fill="#9db9db" opacity="0.7"/>
+  <!-- soft rim light -->
+  <path d="M532 470 C 528 560 480 618 420 632" stroke="#ffffff" stroke-width="10" fill="none" opacity="0.55" filter="url(#dr-soft)"/>
+  <rect width="800" height="1000" filter="url(#dr-grain)" opacity="0.5"/>
+</svg>

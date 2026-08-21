@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900" role="img" aria-label="Soft radiant skin with a dewy droplet in studio light">
+  <defs>
+    <radialGradient id="ab-sky" cx="32%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#fbfdff"/>
+      <stop offset="42%" stop-color="#eaf2fb"/>
+      <stop offset="100%" stop-color="#cfe0f2"/>
+    </radialGradient>
+    <linearGradient id="ab-skin" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f3d9c9"/>
+      <stop offset="45%" stop-color="#f7e4d6"/>
+      <stop offset="100%" stop-color="#eef0f6"/>
+    </linearGradient>
+    <radialGradient id="ab-drop" cx="38%" cy="34%" r="70%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#dcecfb"/>
+      <stop offset="80%" stop-color="#9cc4ee"/>
+      <stop offset="100%" stop-color="#6ba6df"/>
+    </radialGradient>
+    <linearGradient id="ab-rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8fc0ec" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8fc0ec" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="ab-grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.06"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+    <filter id="ab-soft"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+
+  <rect width="800" height="900" fill="url(#ab-sky)"/>
+  <!-- soft skin field -->
+  <path d="M0 380 C 220 300 340 520 520 470 C 680 430 760 300 800 320 L800 900 L0 900 Z" fill="url(#ab-skin)" opacity="0.85"/>
+  <!-- light streaks -->
+  <g opacity="0.5" filter="url(#ab-soft)">
+    <path d="M120 -40 L360 500" stroke="#ffffff" stroke-width="60" stroke-linecap="round"/>
+    <path d="M240 -40 L470 460" stroke="#ffffff" stroke-width="26" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  <!-- dewy droplet -->
+  <g>
+    <ellipse cx="512" cy="392" rx="150" ry="150" fill="url(#ab-rim)" opacity="0.6" filter="url(#ab-soft)"/>
+    <circle cx="500" cy="400" r="128" fill="url(#ab-drop)"/>
+    <ellipse cx="462" cy="360" rx="42" ry="30" fill="#ffffff" opacity="0.85"/>
+    <ellipse cx="548" cy="452" rx="20" ry="14" fill="#ffffff" opacity="0.4"/>
+  </g>
+  <!-- small bokeh droplets -->
+  <circle cx="640" cy="250" r="26" fill="#dcecfb" opacity="0.8"/>
+  <circle cx="690" cy="330" r="14" fill="#ffffff" opacity="0.7"/>
+  <circle cx="300" cy="640" r="34" fill="#ffffff" opacity="0.55"/>
+  <circle cx="210" cy="560" r="16" fill="#cfe0f2" opacity="0.8"/>
+  <rect width="800" height="900" filter="url(#ab-grain)" opacity="0.5"/>
+</svg>
